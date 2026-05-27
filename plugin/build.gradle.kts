@@ -5,15 +5,11 @@
  * For more details on writing Custom Plugins, please refer to https://docs.gradle.org/9.5.0/userguide/custom_plugins.html in the Gradle documentation.
  */
 
+group = "com.buildoptimus"
+
 plugins {
     `kotlin-dsl`
 }
-
-repositories {
-    mavenCentral()
-}
-
-group = "com.buildoptimus"
 
 gradlePlugin {
     website = "https://github.com/BuildOptimus/kmp-launcher-icons"
@@ -39,4 +35,12 @@ gradlePlugin {
             implementationClass = "com.buildoptimus.kmp_launcher_icons.KmpLauncherIconsPlugin"
         }
     }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.bundles.scrimage)
 }
